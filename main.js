@@ -92,8 +92,8 @@ function imageClicked(event){
     
     totalClicked += 1;
     localStorage.setItem('BabyImageArr',JSON.stringify(babyImageArray));
-    
-    if(totalClicked >= 25){
+    //if condition for stopping show images and display chart
+        if(totalClicked >= 25){
     
         elImageContainer.innerHTML = "";
         displayChart();
@@ -142,7 +142,6 @@ function displayImage() {
         imageObject.shown += 1;
         
 }}
-
 //invok displyImage
 displayImage();
 
