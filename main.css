@@ -1,0 +1,26 @@
+h2 {
+    text-emphasis-color: blue;
+    text-align: center;
+}
+
+@keyframes changeColor {
+    from{border-color: black}
+    to{border: 10px teal}
+}
+
+img{
+    widows: 250px;;
+    height: 200px;
+    margin: 1em;
+    border: solid 1px black;
+}
+
+img:hover{
+    transform: scale(1.1, 1.1);
+    animation-name: changeColor;
+}
+
+.chart-container{
+    margin: auto;
+    width: 80%;
+}
