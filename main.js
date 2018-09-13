@@ -9,6 +9,7 @@ let elImageContainer = document.getElementById('iamge-container');
 let firstImage;
 let secondImage;
 let thirdImage;
+let totalClicked = 0;
 
 
 //create an object constructor that will take in parameters, and store properties of an image
@@ -88,24 +89,18 @@ function imageClicked(event){
     //calling our displayImage function for displaying images
     displayImage();
     //save our baby image array to local storage whenever ann image is clicked
+    
+    totalClicked += 1;
     localStorage.setItem('BabyImageArr',JSON.stringify(babyImageArray));
     
-    doChart();
+    if(totalClicked >= 25){
+    
+        elImageContainer.innerHTML = "";
+        displayChart();
 
-    //invoke displayChart
-    // displayChart();
+    }
+  
 }
-
-// function doChart(){
-//     if(event.target.clicked === 10){
-//         elImage.src = "";
-//         displayChart();
-
-// }
-
-// }
-
-
 
 //define a function that will display random images
 function displayImage() {
@@ -147,27 +142,10 @@ function displayImage() {
         imageObject.shown += 1;
         
 }}
-// let tatalSelect = function(){
-
-// }
-function doChart(){
-//if condition for stopping click and show the chart
-if(imageClicked === 15){
-    firstImage.removeEventListener('click', imageClicked);
-    secondImage.removeEventListener('click', imageClicked);
-    thirdImage.removeEventListener('click', imageClicked);
-  
-}
-
-//invoke displayChart
-displayChart();
-
-}
-
 
 //invok displyImage
 displayImage();
-// doChart();
+
 
 
 
